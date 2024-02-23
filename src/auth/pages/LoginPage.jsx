@@ -1,5 +1,7 @@
-import { Grid, TextField, Typography } from '@mui/material'
+import { Google } from '@mui/icons-material'
+import { Button, Grid, Link, TextField, Typography } from '@mui/material'
 import React from 'react'
+import { Link as RouterLink } from 'react-router-dom'
 
 export const LoginPage = () => {
   return (
@@ -12,7 +14,7 @@ export const LoginPage = () => {
       sx={{minHeight: '100vh', backgroundColor: 'primary.main', padding: 4}}
     >
       <Grid item
-        clasName='box-shadow'
+        className='box-shadow'
         xs={3}
         sx={{backgroundColor: '#ffffff', padding: 3, borderRadius: 2}}
       >
@@ -32,6 +34,28 @@ export const LoginPage = () => {
                 type='password'
                 placeholder='contraseña'
                 fullWidth />
+            </Grid>
+            <Grid container spacing={2} sx={{mb: 2, mt: 1}}>
+              <Grid item xs={12} sm={6}>
+                <Button
+                  variant='contained'
+                  fullWidth>
+                    <Typography>Login</Typography>
+                  </Button>
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <Button
+                  variant='contained'
+                  fullWidth>
+                    <Google/>
+                    <Typography sx={{ml: 1}}>Google</Typography>
+                  </Button>
+              </Grid>
+            </Grid>
+            <Grid container direction='row' justifyContent='end'>
+              <Link component={ RouterLink } color='inherit' to='/auth/register'>
+                Create an account
+              </Link>
             </Grid>
           </Grid>
         </form>
